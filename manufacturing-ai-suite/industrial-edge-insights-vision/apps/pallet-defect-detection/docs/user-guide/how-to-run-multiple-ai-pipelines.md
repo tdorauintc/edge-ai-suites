@@ -2,7 +2,7 @@
 
 In a typical deployment, multiple cameras deliver video streams that are connected to AI pipelines to improve the detection and recognition accuracy. 
 
-The DLStreamer Pipeline Server config supports multiple pipelines that you can use to launch pipeline instances. The sample application has been provided with such a config i.e. **pipeline-server-config.json**. We will use the same to demonstrate launching multiple AI pipelines.
+The DLStreamer Pipeline Server config supports multiple pipelines that you can use to launch pipeline instances. The sample application has been provided with such a config i.e. `pipeline-server-config.json`. We will use the same to demonstrate launching multiple AI pipelines.
 
 ## Steps
 
@@ -25,7 +25,7 @@ The DLStreamer Pipeline Server config supports multiple pipelines that you can u
         },
         "parameters": {
             "detection-properties": {
-                "model": "/home/pipeline-server/resources/models/geti/pallet_defect_detection/deployment/Detection/model/model.xml",
+                "model": "/home/pipeline-server/resources/models/pallet-defect-detection/deployment/Detection/model/model.xml",
                 "device": "CPU"
             }
         }
