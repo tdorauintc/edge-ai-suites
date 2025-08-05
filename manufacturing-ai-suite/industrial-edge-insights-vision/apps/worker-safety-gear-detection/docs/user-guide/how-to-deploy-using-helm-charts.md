@@ -21,7 +21,19 @@
     ```sh
     cp helm/values_worker_safety_gear_detection.yaml helm/values.yaml
     ```
-3.  Edit the HOST_IP, proxy and other environment variables in `helm/values.yaml` as follows
+3. Optional: Pull the helm chart and replace the existing helm folder with it
+    - Note: The helm chart should be downloaded when you are not using the helm chart provided in `edge-ai-suites/manufacturing-ai-suite/industrial-edge-insights-vision/helm`
+
+    - Download helm chart with the following command
+
+        `helm pull oci://ghcr.io/open-edge-platform/edge-ai-suites/manufacturing-ai-suite-vision-helm-chart/worker-safety-gear-detection --version 20250805-EAS1.2`
+    - unzip the package using the following command
+
+        `tar -xvf worker-safety-gear-detection-20250805-EAS1.2.tgz`
+    - Replace the helm directory
+
+        `rm -rf helm && mv worker-safety-gear-detection helm`
+4.  Edit the HOST_IP, proxy and other environment variables in `helm/values.yaml` as follows
     ```yaml
     env:        
         HOST_IP: <HOST_IP>   # host IP address
@@ -36,7 +48,7 @@
         username: <username>  # WebRTC credentials e.g. intel1234
         password: <password>
     ```
-4.  Install pre-requisites. Run with sudo if needed.
+5.  Install pre-requisites. Run with sudo if needed.
     ```sh
     ./setup.sh helm
     ```
@@ -44,7 +56,7 @@
 
 ## Deploy the application
 
-5.  Install the helm chart
+1.  Install the helm chart
     ```sh
     helm install app-deploy helm -n apps --create-namespace
     ```
@@ -57,7 +69,7 @@
     kubectl logs -n apps -f <pod_name>
     ```
 
-6.  Copy the resources such as video and model from local directory to the `dlstreamer-pipeline-server` pod to make them available for application while launching pipelines.
+2.  Copy the resources such as video and model from local directory to the `dlstreamer-pipeline-server` pod to make them available for application while launching pipelines.
     ```sh
     # Below is an example for Worker safety gear detection. Please adjust the source path of models and videos appropriately for other sample applications.
     
@@ -67,7 +79,7 @@
  
     kubectl cp resources/worker-safety-gear-detection/models/* $POD_NAME:/home/pipeline-server/resources/models/ -c dlstreamer-pipeline-server -n apps
     ```
-7.  Fetch the list of pipeline loaded available to launch
+3.  Fetch the list of pipeline loaded available to launch
     ```sh
     ./sample_list.sh
     ```
@@ -103,7 +115,7 @@
         ...
     ]
     ```
-8.  Start the sample application with a pipeline.
+4.  Start the sample application with a pipeline.
     ```sh
     ./sample_start.sh -p worker_safety_gear_detection
     ```
@@ -128,7 +140,7 @@
     ```
     >NOTE- This would start the pipeline. You can view the inference stream on WebRTC by opening a browser and navigating to http://<HOST_IP>:31111/worker_safety/.
 
-9.  Get status of pipeline instance(s) running.
+5.  Get status of pipeline instance(s) running.
     ```sh
     ./sample_status.sh
     ```
@@ -151,7 +163,7 @@
     ]
     ```
 
-10. Stop pipeline instance.
+6. Stop pipeline instance.
     ```sh
     ./sample_stop.sh
     ```
@@ -180,7 +192,7 @@
     If you wish to stop a specific instance, you can provide it with an `--id` argument to the command.    
     For example, `./sample_stop.sh --id 784b87b45d1511f08ab0da88aa49c01e`
 
-11.  Uninstall the helm chart.
+7.  Uninstall the helm chart.
      ```sh
      helm uninstall app-deploy -n apps
      ```
