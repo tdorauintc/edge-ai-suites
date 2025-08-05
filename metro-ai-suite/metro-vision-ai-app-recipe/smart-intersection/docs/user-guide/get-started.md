@@ -25,7 +25,7 @@ By following this guide, you will learn how to:
 ## Set up and First Use
 
 <!--
-**User Story 1**: Setting Up the Application  
+**User Story 1**: Setting Up the Application
 - **As a developer**, I want to set up the application in my environment, so that I can start exploring its functionality.
 
 **Acceptance Criteria**:
@@ -47,6 +47,11 @@ By following this guide, you will learn how to:
      ./install.sh smart-intersection
      ```
 
+3. **[Optional] Update DOCKER_REGISTRY variable in `.env` file**
+   **Note: This step is required to deploy with the pre-release images**
+   - The recommended setting to use pre-release images is: `DOCKER_REGISTRY=ghcr.io/open-edge-platform/edge-ai-libraries/`
+     Please remember to include `/` at the end.
+
 ## Run the Application
 
 1. **Start the Application**:
@@ -54,26 +59,26 @@ By following this guide, you will learn how to:
      ```bash
      docker compose up -d
      ```
-     
+
      <details>
      <summary>
      Check Status of Microservices
      </summary>
-     
+
      - The application starts the following microservices.
      - To check if all microservices are in Running state:
        ```bash
        docker ps
        ```
-       
+
      **Expected Services:**
      - Grafana Dashboard
-     - DL Streamer Pipeline Server  
+     - DL Streamer Pipeline Server
      - MQTT Broker
      - Node-RED (for applications without Scenescape)
      - Scenescape services (for Smart Intersection only)
-     
-     </details>   
+
+     </details>
 
 2. **View the Application Output**:
    - Open a browser and go to `http://localhost:3000` to access the Grafana dashboard.

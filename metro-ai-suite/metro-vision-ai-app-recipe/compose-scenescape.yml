@@ -161,7 +161,7 @@ services:
       ]
 
   dlstreamer-pipeline-server:
-    image: docker.io/intel/dlstreamer-pipeline-server:3.0.0
+    image: ${DOCKER_REGISTRY}intel/edge-ai-dlstreamer-pipeline-server:20250731_EAL1.2_DLSPS_RC4-ubuntu24
     networks:
       - scenescape
     privileged: true

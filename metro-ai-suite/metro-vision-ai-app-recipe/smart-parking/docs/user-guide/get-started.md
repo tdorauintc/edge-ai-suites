@@ -40,6 +40,11 @@ By following this guide, you will learn how to:
      ./install.sh smart-parking
      ```
 
+3. **[Optional] Update DOCKER_REGISTRY variable in `.env` file**
+   **Note: This step is required to deploy with the pre-release images**
+   - The recommended setting to use pre-release images is: `DOCKER_REGISTRY=ghcr.io/open-edge-platform/edge-ai-libraries/`
+     Please remember to include `/` at the end.
+
 ## Run the Application
 
 1. **Start the Application**:

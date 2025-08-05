@@ -41,6 +41,7 @@ Follow this procedure on the target system to install the package.
 1. Update the below fields in `values.yaml` file in the Helm chart
 
     ``` sh
+    DOCKER_REGISTRY: ghcr.io/open-edge-platform/edge-ai-libraries/ # the convention with trailing / is used
     HOST_IP: # replace localhost with system IP example: HOST_IP: 10.100.100.100
     http_proxy: # example: http_proxy: http://proxy.example.com:891
     https_proxy: # example: http_proxy: http://proxy.example.com:891
