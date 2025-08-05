@@ -44,8 +44,9 @@ Enable running docker without "sudo": [Post Install](https://docs.docker.com/eng
      ./install.sh loitering-detection
      ```
 
-3. **Update DOCKER_REGISTRY variable in `.env` file**
-   - The recommended setting is: `DOCKER_REGISTRY=ghcr.io/open-edge-platform/edge-ai-libraries/`
+3. **[Optional] Update DOCKER_REGISTRY variable in `.env` file**
+   **Note: This step is required to deploy with the pre-release images**
+   - The recommended setting to use pre-release images is: `DOCKER_REGISTRY=ghcr.io/open-edge-platform/edge-ai-libraries/`
      Please remember to include `/` at the end.
 
 ## Run the application
