@@ -30,7 +30,7 @@ Follow this procedure on the target system to install the package.
 2. Unzip the package using the following command:
 
     `tar xvf loitering-detection-1.1.0.tgz`
-    
+
 3. Go to the Helm directory:
 
     `cd loitering-detection`
@@ -41,11 +41,12 @@ Follow this procedure on the target system to install the package.
 1. Update the following fields in `values.yaml` file in the Helm chart:
 
     ``` sh
+    DOCKER_REGISTRY: ghcr.io/open-edge-platform/edge-ai-libraries/ # the convention with trailing / is used
     HOST_IP: # replace localhost with system IP example: HOST_IP: 10.100.100.100
     http_proxy: # example: http_proxy: http://proxy.example.com:891
     https_proxy: # example: http_proxy: http://proxy.example.com:891
     webrtcturnserver:
-        username: # example: username: myuser 
+        username: # example: username: myuser
         password: # example: password: mypassword
     ```
 
@@ -177,7 +178,7 @@ Follow this procedure to stop the sample application and end this demonstration.
     ```sh
     helm uninstall loitering-detection -n ld
     ```
-    
+
 
 2. Confirm the pods are no longer running.
 
