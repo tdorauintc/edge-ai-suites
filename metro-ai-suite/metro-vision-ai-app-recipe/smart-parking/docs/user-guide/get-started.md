@@ -39,8 +39,6 @@ By following this guide, you will learn how to:
      ```bash
      ./install.sh smart-parking
      ```
-    > **Note**: The application uses weekly builds from GitHub Container Registry (ghcr.io/open-edge-platform/) by default.
-
     <details>
     <summary>
     Switch to Stable Build (Optional)
@@ -50,7 +48,7 @@ By following this guide, you will learn how to:
 
     ```bash
     sed -i 's/^DOCKER_REGISTRY=.*/DOCKER_REGISTRY=/' .env
-    sed -i 's/intel\/edge-ai-dlstreamer-pipeline-server:.*/intel\/dlstreamer-pipeline-server:3.0.0/' docker-compose.yml
+    sed -i 's/intel\/dlstreamer-pipeline-server:.*/intel\/dlstreamer-pipeline-server:3.1.0/' docker-compose.yml
     sed -i 's/intel\/scenescape-manager:.*/intel\/scenescape-manager:v1.3.0/' docker-compose.yml
     sed -i 's/intel\/scenescape-controller:.*/intel\/scenescape-controller:v1.3.0/' docker-compose.yml
     ```
