@@ -1,7 +1,6 @@
 # Copyright Intel Corporation
 
 namespace:
-DOCKER_REGISTRY: ''
 DOCKER_USERNAME: ''
 DOCKER_PASSWORD: ''
 imagePullPolicy: Always

@@ -47,23 +47,6 @@ By following this guide, you will learn how to:
      ./install.sh smart-intersection
      ```
 
-    <details>
-    <summary>
-    Switch to Stable Build (Optional)
-    </summary>
-
-    To use stable releases from Docker Hub instead of weekly builds, run the following commands:
-
-    ```bash
-    sed -i 's/^DOCKER_REGISTRY=.*/DOCKER_REGISTRY=/' .env
-    sed -i 's/intel\/dlstreamer-pipeline-server:.*/intel\/dlstreamer-pipeline-server:3.1.0/' docker-compose.yml
-    sed -i 's/intel\/scenescape-manager:.*/intel\/scenescape-manager:v1.3.0/' docker-compose.yml
-    sed -i 's/intel\/scenescape-controller:.*/intel\/scenescape-controller:v1.3.0/' docker-compose.yml
-    ```
-    This updates the application to use stable images from [Docker Hub](https://hub.docker.com/u/intel/).
-
-    </details>
-
 ## Run the Application
 
 1. **Start the Application**:
