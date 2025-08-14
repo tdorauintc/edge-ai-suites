@@ -79,7 +79,7 @@ web:
     tag: v1.3.0
 dlstreamerPipelineServer:
   repository: intel/dlstreamer-pipeline-server
-  tag: 3.1.0
+  tag: 3.1.0-ubuntu24
 ```
 This updates the application to use stable images from [Docker Hub](https://hub.docker.com/u/intel/).
 
